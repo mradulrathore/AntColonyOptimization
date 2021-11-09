@@ -8,7 +8,7 @@ import java.util.List;
 import org.cloudbus.cloudsim.Cloudlet;
 import org.cloudbus.cloudsim.CloudletSchedulerSpaceShared;
 import org.cloudbus.cloudsim.Datacenter;
-import org.cloudbus.cloudsim.DatacenterBroker;
+//import org.cloudbus.cloudsim.DatacenterBroker;
 import org.cloudbus.cloudsim.DatacenterCharacteristics;
 import org.cloudbus.cloudsim.Host;
 import org.cloudbus.cloudsim.Log;
@@ -105,6 +105,7 @@ public class ACO {
                             new VmSchedulerTimeShared(peList)));
             hostId++;
         }
+
         String arch = "x86";
         String os = "Linux";
         String vmm = "Xen";
@@ -129,7 +130,7 @@ public class ACO {
     private static DatacenterBroker createBroker() {
         DatacenterBroker broker = null;
         try {
-            broker = new DatacenterBroker("Broker");
+            broker = new DatacenterBroker("Broker",1,100.0,1.0,5.0,1.0,0.5);
         } catch (Exception e) {
 
             e.printStackTrace();
